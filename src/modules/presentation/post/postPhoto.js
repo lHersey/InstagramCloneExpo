@@ -1,27 +1,24 @@
-import React, { Component } from "react";
-import { Image, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import PropTypes from 'prop-types';
 
 class postPhoto extends Component {
   DOUBLE_PRESS_DELAY = 300;
 
   state = {
-    screenWidth: 0
+    screenWidth: 0,
   };
 
   componentDidMount() {
     this.setState({
-      screenWidth: Dimensions.get("window").width
+      screenWidth: Dimensions.get('window').width,
     });
   }
 
   handlePhotoDoublePress = e => {
     const now = new Date().getTime();
 
-    if (
-      this.lastImagePress &&
-      now - this.lastImagePress < this.DOUBLE_PRESS_DELAY
-    ) {
+    if (this.lastImagePress && now - this.lastImagePress < this.DOUBLE_PRESS_DELAY) {
       delete this.lastImagePress;
       this.props.handleLike(e);
     } else {
@@ -33,19 +30,13 @@ class postPhoto extends Component {
     const dynamic = StyleSheet.create({
       cardPhoto: {
         height: this.state.screenWidth,
-        width: this.state.screenWidth
-      }
+        width: this.state.screenWidth,
+      },
     });
 
     return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={this.handlePhotoDoublePress}
-      >
-        <Image
-          style={dynamic.cardPhoto}
-          source={{ uri: this.props.postPhoto }}
-        />
+      <TouchableOpacity activeOpacity={0.8} onPress={this.handlePhotoDoublePress}>
+        <Image style={dynamic.cardPhoto} source={{ uri: this.props.postPhoto }} />
       </TouchableOpacity>
     );
   }
@@ -53,7 +44,7 @@ class postPhoto extends Component {
 
 postPhoto.propTypes = {
   handleLike: PropTypes.func.isRequired,
-  postPhoto: PropTypes.string.isRequired
+  postPhoto: PropTypes.string.isRequired,
 };
 
 export default postPhoto;

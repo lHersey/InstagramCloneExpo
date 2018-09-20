@@ -1,3 +1,3 @@
-import PostFeed from "./postFeed/postFeed";
+import PostFeed from './postFeed/postFeed';
 
 export { PostFeed };

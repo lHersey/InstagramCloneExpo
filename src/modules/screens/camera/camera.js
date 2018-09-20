@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import React, { Component } from 'react';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 class camera extends Component {
   singIn = () => {
-    this.props.navigation.navigate("main");
+    this.props.navigation.navigate('main');
   };
 
   render() {
@@ -17,12 +17,12 @@ class camera extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
-    width: "100%",
+    height: '100%',
+    width: '100%',
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default camera;

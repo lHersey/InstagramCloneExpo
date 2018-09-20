@@ -1,14 +1,9 @@
-import React from "react";
-import { View, Image, StyleSheet } from "react-native";
-import Icon from "./icon";
-import config from "../../../config";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import Icon from './icon';
+import config from '../../../config';
 
-const iconBar = ({
-  sourceHeart,
-  onHeartPress,
-  onCommentPress,
-  onSendPress
-}) => {
+const iconBar = ({ sourceHeart, onHeartPress, onCommentPress, onSendPress }) => {
   return (
     <View style={styles.iconBar}>
       <Icon source={sourceHeart} onPress={onHeartPress} />
@@ -21,9 +16,9 @@ const iconBar = ({
 const styles = StyleSheet.create({
   iconBar: {
     height: 50,
-    width: "100%",
-    flexDirection: "row"
-  }
+    width: '100%',
+    flexDirection: 'row',
+  },
 });
 
 export default iconBar;

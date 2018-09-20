@@ -1,5 +1,5 @@
-import React from "react";
-import { Image, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import React from 'react';
+import { Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
 const icon = ({ source, onPress }) => {
   return (
@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
   icon: {
     width: 40,
     height: 40,
-    margin: 7
-  }
+    margin: 7,
+  },
 });
 
 export default icon;

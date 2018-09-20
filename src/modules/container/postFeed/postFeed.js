@@ -1,15 +1,10 @@
-import React, { Component } from "react";
-import { FlatList, StyleSheet } from "react-native";
-import { Post } from "../../presentation";
+import React, { Component } from 'react';
+import { FlatList, StyleSheet } from 'react-native';
+import { Post } from '../../presentation';
 
 class postFeed extends Component {
   renderPost = ({ item }) => (
-    <Post
-      name={item.name}
-      profilePhoto={item.profilePhoto}
-      postPhoto={item.postPhoto}
-      likes={item.likes}
-    />
+    <Post name={item.name} profilePhoto={item.profilePhoto} postPhoto={item.postPhoto} likes={item.likes} />
   );
 
   keyExtractor = item => item.id.toString();
@@ -29,8 +24,8 @@ class postFeed extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: "100%"
-  }
+    width: '100%',
+  },
 });
 
 export default postFeed;
